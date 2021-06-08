@@ -16,9 +16,11 @@
     <input type="submit" />
   </form>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
   <script type="text/javascript">
-    var url = "http://127.0.0.1:5000/"
+
+    var url = "https://campuscube.herokuapp.com/"
+
     var socket = io.connect(url); //server address
 
     socket.addEventListener('connect', function () 
