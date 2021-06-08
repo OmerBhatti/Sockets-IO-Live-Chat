@@ -19,15 +19,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
   <script type="text/javascript">
 
-    var url = "http://127.0.0.1:5000"
+    var url = `ws://${document.domain}:${location.port}`
 
     var socket = io.connect(url); //server address
 
     socket.addEventListener('connect', function () 
     {
       socket.emit('message', {
-            user_name: "Someone",
-            message: "Joined the chat"
+            user_name: "Someone joined the chat!",
+            message: ""
       })
       document.querySelector("form").addEventListener('submit', function (e) 
       {
