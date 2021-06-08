@@ -19,12 +19,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
   <script type="text/javascript">
 
-    var url = "https://campuscube.herokuapp.com/"
+    var url = "http://127.0.0.1:5000"
 
     var socket = io.connect(url); //server address
 
     socket.addEventListener('connect', function () 
     {
+      socket.emit('message', {
+            user_name: "Someone",
+            message: "Joined the chat"
+      })
       document.querySelector("form").addEventListener('submit', function (e) 
       {
         e.preventDefault()
